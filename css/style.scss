@@ -1,0 +1,132 @@
+$c-def-dark-grey: #0F0F0F;
+$c-def-white: #fff;
+$c-def-grey: #161616;
+$c-def-light-grey: #7C7C7C;
+
+$fz-l: 42px;
+$fz-md-x: 24px;
+$fz-md: 18px;
+$fz-sm: 16px;
+$fz-tiny: 14px;
+
+$br-md: 10px;
+$br-left: 10px 0 0 10px;
+
+#flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+#flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  color: $c-def-white;
+  background: $c-def-grey;
+  font-size: $fz-sm;
+  font-family: "Montserrat", sans-serif;
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
+h1, h2 {
+  letter-spacing: 3px;
+  font-size: $fz-l;
+  line-height: 42px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: $fz-tiny;
+}
+
+p {
+  letter-spacing: 3px;
+  font-size: $fz-sm;
+}
+
+.aside {
+  @extend #flex-column;
+  gap: 50px;
+  padding: 40px 0;
+  width: fit-content;
+  background: $c-def-dark-grey;
+  height: 100vh;
+  overflow-y: scroll;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: darkgrey;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: red;
+    border-radius: $br-md;
+  }
+
+  &Heading {
+    padding: 0 50px;
+  }
+
+  &Nav {
+    @extend #flex-column;
+    gap: 50px;
+    padding-left: 50px;
+
+    h3 {
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    &List {
+      @extend #flex-column;
+      gap: 22px;
+      font-weight: 600;
+
+      li {
+        cursor: pointer;
+        padding: 10px 50px 10px 50px;
+        border-radius: $br-left;
+        transition: .2s;
+        font-size: $fz-md;
+
+        &:hover {
+          background: $c-def-grey;
+          border-radius: $br-left;
+        }
+      }
+    }
+
+    .soon {
+      position: relative;
+      height: 100%;
+
+      &::after {
+        content: 'Скоро';
+        position: absolute;
+        right: -70px;
+        font-size: $fz-md;
+        color: $c-def-light-grey;
+
+      }
+    }
+
+
+  }
+
+  &SMLinks {
+    padding-left: 50px;
+    display: flex;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,103 @@
+@charset "UTF-8";
+#flex-column, .asideNavList, .asideNav, .aside {
+  display: flex;
+  flex-direction: column;
+}
+
+#flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  color: #fff;
+  background: #161616;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  max-width: 1920px;
+  margin-inline: auto;
+}
+
+h1, h2 {
+  letter-spacing: 3px;
+  font-size: 42px;
+  line-height: 42px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+p {
+  letter-spacing: 3px;
+  font-size: 16px;
+}
+
+.aside {
+  gap: 50px;
+  padding: 40px 0;
+  width: fit-content;
+  background: #0F0F0F;
+  height: 100vh;
+  overflow-y: scroll;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+.aside::-webkit-scrollbar {
+  width: 7px;
+}
+.aside::-webkit-scrollbar-track {
+  background-color: darkgrey;
+}
+.aside::-webkit-scrollbar-thumb {
+  background-color: red;
+  border-radius: 10px;
+}
+.asideHeading {
+  padding: 0 50px;
+}
+.asideNav {
+  gap: 50px;
+  padding-left: 50px;
+}
+.asideNav h3 {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.asideNavList {
+  gap: 22px;
+  font-weight: 600;
+}
+.asideNavList li {
+  cursor: pointer;
+  padding: 10px 50px 10px 50px;
+  border-radius: 10px 0 0 10px;
+  transition: 0.2s;
+  font-size: 18px;
+}
+.asideNavList li:hover {
+  background: #161616;
+  border-radius: 10px 0 0 10px;
+}
+.asideNav .soon {
+  position: relative;
+  height: 100%;
+}
+.asideNav .soon::after {
+  content: "Скоро";
+  position: absolute;
+  right: -70px;
+  font-size: 18px;
+  color: #7C7C7C;
+}
+.asideSMLinks {
+  padding-left: 50px;
+  display: flex;
+  gap: 15px;
+}
+
+/*# sourceMappingURL=style.css.map */
