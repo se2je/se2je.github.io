@@ -3,6 +3,9 @@ const siteSections = document.querySelectorAll('.siteSection');
 const asideLogo = document.querySelector('.asideHeading');
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Navigation tabs logic
+
     const firstTab = 'about';
     let currentTab = localStorage.getItem("currentTab") || firstTab;
 
@@ -25,6 +28,36 @@ document.addEventListener('DOMContentLoaded', () => {
     asideLogo.addEventListener('click', () => {
         currentTab = firstTab;
         setActiveTab(currentTab);
+    });
+
+    // Expandable blocks logic
+    const expandableBlocks = document.querySelectorAll('.expandable-block');
+
+    expandableBlocks.forEach(function (block) {
+        const header = block.querySelector('.expandable-header');
+        const content = block.querySelector('.expandable-content');
+        const arrow = block.querySelector('.expandable-arrow');
+
+        header.addEventListener('click', function () {
+            if (content.classList.contains('show')) {
+                // Closing animation
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.marginBottom = '0px';
+                arrow.style.transform = 'rotate(0deg)';
+                setTimeout(() => {
+                    content.classList.toggle('show');
+                    content.style.maxHeight = '0';
+                }, 50);
+            } else {
+                // Opening animation
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.marginBottom = '20px';
+                arrow.style.transform = 'rotate(180deg)';
+                setTimeout(() => {
+                    content.classList.toggle('show');
+                }, 50);
+            }
+        });
     });
 });
 

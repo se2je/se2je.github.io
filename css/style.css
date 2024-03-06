@@ -1,5 +1,5 @@
 @charset "UTF-8";
-#flex-column, .asideNavList, .asideNav, .aside {
+#flex-column, .siteSectionBodyContentDropInfo, .asideNavList, .asideNav, .aside {
   display: flex;
   flex-direction: column;
 }
@@ -41,6 +41,20 @@ p {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+}
+
+.expandable-block {
+  overflow: hidden;
+}
+
+.expandable-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.expandable-content.show {
+  max-height: 500px; /* Adjust as needed */
 }
 
 .aside {
@@ -217,8 +231,43 @@ p {
   flex-direction: column;
   gap: 4px;
 }
+.siteSectionBodyContent {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.siteSectionBodyContent .dnaImg {
+  max-width: 550px;
+}
+.siteSectionBodyContentDropInfo {
+  gap: 20px;
+  max-width: 500px;
+}
+.siteSectionBodyContentDropInfoHeader {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 45px;
+}
+.siteSectionBodyContentDropInfo .expandable-block {
+  padding: 0 20px;
+  border: 1px solid #7C7C7C;
+  border-radius: 10px;
+}
+.siteSectionBodyContentDropInfo .expandable-block .expandable-header {
+  cursor: pointer;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  user-select: none;
+}
+.siteSectionBodyContentDropInfo .expandable-block .expandable-header .expandable-arrow {
+  transition: 0.4s;
+}
 .siteSectionImg {
   border-radius: 10px;
+  pointer-events: none;
+  user-select: none;
 }
 
 .active {

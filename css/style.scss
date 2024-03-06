@@ -56,6 +56,20 @@ p {
   line-height: 24px;
 }
 
+.expandable-block {
+  overflow: hidden;
+}
+
+.expandable-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.expandable-content.show {
+  max-height: 500px; /* Adjust as needed */
+}
+
 .aside {
   @extend #flex-column;
   gap: 50px;
@@ -180,8 +194,6 @@ p {
   max-height: 100vh;
 
 
-
-
   &Heading {
     display: flex;
     align-items: center;
@@ -271,12 +283,58 @@ p {
         }
       }
     }
+
+    &Content {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .dnaImg {
+        max-width: 550px;
+      }
+
+      &DropInfo {
+        @extend #flex-column;
+        gap: 20px;
+        max-width: 500px;
+
+        &Header {
+          font-size: $fz-md-x;
+          font-weight: 600;
+          margin-bottom: 45px;
+        }
+
+        .expandable-block {
+          padding: 0 20px;
+          border: 1px solid $c-def-light-grey;
+          border-radius: $br-md;
+
+          .expandable-header {
+            cursor: pointer;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            user-select: none;
+
+            .expandable-arrow {
+              transition: .4s;
+            }
+          }
+
+        }
+      }
+    }
   }
 
   &Img {
     border-radius: $br-md;
+    pointer-events: none;
+    user-select: none;
 
   }
+
+
 }
 
 .active {
