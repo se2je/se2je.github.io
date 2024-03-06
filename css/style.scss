@@ -31,6 +31,20 @@ body {
   max-width: 1920px;
   margin-inline: auto;
   position: relative;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $c-def-light-grey;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: $br-md;
+  }
 }
 
 * {
@@ -80,6 +94,11 @@ p {
   position: fixed;
   left: 0;
   top: 0;
+
+  .active {
+    background: $c-def-grey;
+    border-radius: $br-left;
+  }
 
   &::-webkit-scrollbar {
     width: 7px;
@@ -288,9 +307,13 @@ p {
       display: flex;
       justify-content: space-between;
       width: 100%;
+      background: $c-def-dark-grey;
+      padding: 60px 30px;
+      border-radius: $br-md;
 
       .dnaImg {
-        max-width: 550px;
+        max-width: 400px;
+        max-height: 400px;
       }
 
       &DropInfo {
@@ -301,7 +324,7 @@ p {
         &Header {
           font-size: $fz-md-x;
           font-weight: 600;
-          margin-bottom: 45px;
+          margin-bottom: 35px;
         }
 
         .expandable-block {
@@ -311,7 +334,7 @@ p {
 
           .expandable-header {
             cursor: pointer;
-            padding: 20px 0;
+            padding: 20px 0 15px;
             display: flex;
             justify-content: space-between;
             font-weight: 600;
@@ -325,13 +348,43 @@ p {
         }
       }
     }
-  }
 
-  &Img {
-    border-radius: $br-md;
-    pointer-events: none;
-    user-select: none;
+    &Img {
+      border-radius: $br-md;
+      pointer-events: none;
+      user-select: none;
 
+      img {
+        width: 100%;
+        max-width: 1035px;
+        max-height: 784px;
+      }
+    }
+
+
+    &ContactTabs {
+      width: 100%;
+
+      .contactTabsList {
+        display: flex;
+        gap: 5px;
+
+        li {
+          @extend #flex-column;
+          width: 25%;
+          gap: 10px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px 10px 0 0;
+          padding: 10px;
+          cursor: pointer;
+
+          &:hover {
+            background: $c-def-dark-grey;
+          }
+        }
+      }
+    }
   }
 
 

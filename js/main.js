@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
         siteSections.forEach((section) => {
             section.classList.toggle('active', section.classList.contains(tab));
         });
+        
+        navItems.forEach((item) => {
+            item.classList.toggle('active', item.id === tab);
+        });
+
         localStorage.setItem("currentTab", tab);
     };
 
@@ -65,7 +70,7 @@ function updateBodyPadding() {
     let asideWidth = document.querySelector('.aside').offsetWidth;
     if (window.innerWidth < 1920 + asideWidth) {
         document.body.style.paddingLeft = asideWidth + 'px';
-    } else document.body.style.paddingLeft = '0';
+    }
 }
 
 updateBodyPadding();
