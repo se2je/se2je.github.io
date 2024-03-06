@@ -1,31 +1,32 @@
-const navItems = document.querySelectorAll('.asideNavList li')
-let currentTab = 'about'
-const siteSections = document.querySelectorAll('.siteSection')
+const navItems = document.querySelectorAll('.asideNavList li');
+const siteSections = document.querySelectorAll('.siteSection');
+const asideLogo = document.querySelector('.asideHeading');
 
-document.open(() => {
-    const firstTab = 'about'
-    const reloadTab = localStorage.getItem("CurrentTab")
-    if (reloadTab) {
-        siteSections.forEach((section) => {
-            section.classList.contains(reloadTab) ? section.classList.add('active') : section.classList.remove('active');
-        })
+document.addEventListener('DOMContentLoaded', () => {
+    const firstTab = 'about';
+    let currentTab = localStorage.getItem("currentTab") || firstTab;
 
-    } else {
+    const setActiveTab = (tab) => {
         siteSections.forEach((section) => {
-            section.classList.contains(firstTab) ? section.classList.add('active') : section.classList.remove('active');
-        })
-    }
-})
+            section.classList.toggle('active', section.classList.contains(tab));
+        });
+        localStorage.setItem("currentTab", tab);
+    };
 
-navItems.forEach((item) => {
-    item.addEventListener('click', () => {
-        currentTab = item.id
-        siteSections.forEach((section) => {
-            section.classList.contains(currentTab) ? section.classList.add('active') : section.classList.remove('active');
-            localStorage.setItem("currentTab", currentTab);
-        })
-    })
-})
+    setActiveTab(currentTab);
+
+    navItems.forEach((item) => {
+        item.addEventListener('click', () => {
+            currentTab = item.id;
+            setActiveTab(currentTab);
+        });
+    });
+
+    asideLogo.addEventListener('click', () => {
+        currentTab = firstTab;
+        setActiveTab(currentTab);
+    });
+});
 
 function updateBodyPadding() {
     let asideWidth = document.querySelector('.aside').offsetWidth;
