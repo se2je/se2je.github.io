@@ -11,12 +11,17 @@
 }
 
 body {
-  color: #fff;
+  color: rgb(255, 255, 255);
   background: #161616;
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   max-width: 1920px;
   margin-inline: auto;
+  position: relative;
+}
+
+* {
+  transition: 0.2s;
 }
 
 h1, h2 {
@@ -38,7 +43,6 @@ p {
 
 .aside {
   gap: 50px;
-  padding: 40px 0;
   width: fit-content;
   background: #0F0F0F;
   height: 100vh;
@@ -51,18 +55,43 @@ p {
   width: 7px;
 }
 .aside::-webkit-scrollbar-track {
-  background-color: darkgrey;
+  background-color: #7C7C7C;
 }
 .aside::-webkit-scrollbar-thumb {
-  background-color: red;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
 }
 .asideHeading {
-  padding: 0 50px;
+  padding: 50px 50px 0 50px;
+  text-align: center;
+}
+.asideHeading h1 {
+  font-weight: 700;
+  font-size: 52px;
+}
+.asideHeading a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  display: block;
+}
+.asideHeading p {
+  margin-top: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 .asideNav {
   gap: 50px;
   padding-left: 50px;
+}
+.asideNav .navIcon {
+  position: absolute;
+  left: 4%;
+  top: 50%;
+  transform: translateY(-45%);
+}
+.asideNav .navIcon img {
+  width: 24px;
+  height: 24px;
 }
 .asideNav h3 {
   margin-bottom: 20px;
@@ -74,10 +103,12 @@ p {
 }
 .asideNavList li {
   cursor: pointer;
-  padding: 10px 50px 10px 50px;
+  padding: 13px 50px 10px 50px;
   border-radius: 10px 0 0 10px;
   transition: 0.2s;
   font-size: 18px;
+  position: relative;
+  user-select: none;
 }
 .asideNavList li:hover {
   background: #161616;
@@ -97,7 +128,19 @@ p {
 .asideSMLinks {
   padding-left: 50px;
   display: flex;
-  gap: 15px;
+  gap: 17px;
+  padding-bottom: 50px;
+}
+.asideSMLinks li:hover {
+  transform: scale(1.1);
+}
+
+.siteSection {
+  display: none;
+}
+
+.active {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

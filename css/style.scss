@@ -1,5 +1,5 @@
 $c-def-dark-grey: #0F0F0F;
-$c-def-white: #fff;
+$c-def-white: rgb(255, 255, 255);
 $c-def-grey: #161616;
 $c-def-light-grey: #7C7C7C;
 
@@ -30,6 +30,11 @@ body {
   font-family: "Montserrat", sans-serif;
   max-width: 1920px;
   margin-inline: auto;
+  position: relative;
+}
+
+* {
+  transition: .2s;
 }
 
 h1, h2 {
@@ -52,7 +57,6 @@ p {
 .aside {
   @extend #flex-column;
   gap: 50px;
-  padding: 40px 0;
   width: fit-content;
   background: $c-def-dark-grey;
   height: 100vh;
@@ -66,22 +70,50 @@ p {
   }
 
   &::-webkit-scrollbar-track {
-    background-color: darkgrey;
+    background-color: $c-def-light-grey;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: red;
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: $br-md;
   }
 
   &Heading {
-    padding: 0 50px;
+    padding: 50px 50px 0 50px;
+    text-align: center;
+    h1{
+      font-weight: 700;
+      font-size: 52px;
+    }
+    a{
+      text-decoration: none;
+      color: $c-def-white;
+      display: block;
+
+    }
+    p{
+      margin-top: 10px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
   }
 
   &Nav {
     @extend #flex-column;
     gap: 50px;
     padding-left: 50px;
+
+    .navIcon {
+      position: absolute;
+      left: 4%;
+      top: 50%;
+      transform: translateY(-45%);
+
+      img{
+        width: 24px;
+        height: 24px;
+      }
+    }
 
     h3 {
       margin-bottom: 20px;
@@ -95,10 +127,12 @@ p {
 
       li {
         cursor: pointer;
-        padding: 10px 50px 10px 50px;
+        padding: 13px 50px 10px 50px;
         border-radius: $br-left;
         transition: .2s;
         font-size: $fz-md;
+        position: relative;
+        user-select: none;
 
         &:hover {
           background: $c-def-grey;
@@ -120,13 +154,24 @@ p {
 
       }
     }
-
-
   }
 
   &SMLinks {
     padding-left: 50px;
     display: flex;
-    gap: 15px;
+    gap: 17px;
+    padding-bottom: 50px;
+
+    li:hover {
+      transform: scale(1.1);
+    }
   }
+}
+
+.siteSection{
+  display: none;
+}
+
+.active{
+  display: block;
 }
