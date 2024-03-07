@@ -102,17 +102,48 @@ document.addEventListener('DOMContentLoaded', () => {
             let span = document.createElement('span');
 
             span.textContent = (index + 1).toString();
-            span.classList.add('listNumber')
+            span.classList.add('listNumber');
             item.insertBefore(span, item.firstChild);
         });
+
+
     }
 
-    const activitiesList = document.querySelector('.activitiesList')
-    const leisureList = document.querySelector('.leisureList')
+    const activitiesList = document.querySelector('.activitiesList');
+    const leisureList = document.querySelector('.leisureList');
+    const medicineList1 = document.querySelector('.medicine_list_1');
+    const medicineList2 = document.querySelector('.medicine_list_2');
+    const medicineList3 = document.querySelector('.medicine_list_3');
+    addSequenceNumbers(activitiesList);
+    addSequenceNumbers(leisureList);
+    addSequenceNumbers(medicineList1);
+    addSequenceNumbers(medicineList2);
+    addSequenceNumbers(medicineList3);
 
-    addSequenceNumbers(activitiesList)
-    addSequenceNumbers(leisureList)
+
+    const eventsSliderTabs = document.querySelectorAll('.eventsSliderTabs li')
+    const eventsSlides = document.querySelectorAll('.currentEventInfo li')
+    let currentEventSlide = 'event_1'
+    const setCurrentSliderTab = (tab) => {
+
+        eventsSlides.forEach((tabItem) => {
+            tabItem.classList.toggle('active', tabItem.classList.contains(tab));
+        });
+
+        eventsSliderTabs.forEach((item) => {
+            item.classList.toggle('active', item.id === tab);
+        });
+    }
+    eventsSliderTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            currentEventSlide = tab.id
+            setCurrentSliderTab(currentEventSlide)
+        })
+    })
+    setCurrentSliderTab(currentEventSlide);
 });
+
+
 
 // Body offset relative to aside
 

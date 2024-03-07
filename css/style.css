@@ -1,5 +1,5 @@
 @charset "UTF-8";
-#flex-column, .siteSectionBodyContactTabs .contactsInfo ul li, .siteSectionBodyContactTabs .contactTabsList li, .siteSectionBodyContentDropInfo, .asideNavList, .asideNav, .aside {
+#flex-column, .siteSectionBodyContactTabs .contactsInfo ul li, .siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .medicine_lists ul, .siteSectionBodyContactTabs .contactTabsList li, .siteSectionBodyContentDropInfo, .asideNavList, .asideNav .asideProjectsList, .asideNav .asideLinksList, .asideNav, .aside {
   display: flex;
   flex-direction: column;
 }
@@ -10,7 +10,7 @@
   justify-content: center;
 }
 
-#dark-block, .siteSectionBodyContactTabs .contactsInfo, .siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem, .siteSectionBodyContent, .siteSectionBodyInfo {
+#dark-block, .siteSection .eventsSlider .currentEventInfo li, .siteSectionBodyContactTabs .contactsInfo, .siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem, .siteSectionBodyContent, .siteSectionBodyInfo {
   background: #0F0F0F;
   border-radius: 10px;
 }
@@ -134,11 +134,11 @@ p {
   margin-bottom: 20px;
   font-weight: 500;
 }
-.asideNavList {
+.asideNavList, .asideNav .asideProjectsList, .asideNav .asideLinksList {
   gap: 22px;
   font-weight: 600;
 }
-.asideNavList li {
+.asideNavList li, .asideNav .asideProjectsList li, .asideNav .asideLinksList li {
   cursor: pointer;
   padding: 13px 50px 10px 50px;
   border-radius: 10px 0 0 10px;
@@ -147,7 +147,7 @@ p {
   position: relative;
   user-select: none;
 }
-.asideNavList li:hover {
+.asideNavList li:hover, .asideNav .asideProjectsList li:hover, .asideNav .asideLinksList li:hover {
   background: #161616;
   border-radius: 10px 0 0 10px;
 }
@@ -340,25 +340,21 @@ p {
 .siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .contactsTabItemList li p {
   width: fit-content;
 }
-.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .contactsTabItemList li .questionTooltip {
-  margin-left: 10px;
-  cursor: pointer;
-  width: 24px;
-  height: 24px;
+.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .medicine_lists {
+  display: flex;
+  justify-content: space-between;
 }
-.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .contactsTabItemList li .questionTooltip img {
-  width: 100%;
-  height: 100%;
+.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .medicine_lists h3 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 18px;
 }
-.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .contactsTabItemList .listNumber {
-  display: inline-block;
-  width: 54px;
-  height: 54px;
-  text-align: center;
-  padding-top: 17px;
-  border-radius: 10px;
-  border: 1px solid #7C7C7C;
-  margin-right: 20px;
+.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .medicine_lists ul {
+  gap: 20px;
+}
+.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .medicine_lists ul li {
+  display: flex;
+  align-items: center;
 }
 .siteSectionBodyContactTabs .contactsTabsItems .active {
   display: block;
@@ -383,6 +379,98 @@ p {
 .siteSectionBodyContactTabs .contactsInfo ul img {
   width: 26px;
   height: 28px;
+  margin-bottom: 5px;
+}
+.siteSection .eventsSliderTabs {
+  display: flex;
+  gap: 17px;
+  margin-bottom: 25px;
+}
+.siteSection .eventsSliderTabs li {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 20%;
+  max-height: 334px;
+  height: 334px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.3s;
+}
+.siteSection .eventsSliderTabs li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.siteSection .eventsSliderTabs li .frontDrop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #0F0F0F;
+  opacity: 0.6;
+}
+.siteSection .eventsSliderTabs li .frontDrop:hover {
+  opacity: 0;
+}
+.siteSection .eventsSliderTabs .active {
+  width: 40%;
+}
+.siteSection .eventsSliderTabs .active .frontDrop {
+  opacity: 0;
+}
+.siteSection .eventsSliderTabs .active .eventDate {
+  opacity: 1;
+}
+.siteSection .eventsSliderTabs .eventDate {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  font-weight: 600;
+  font-size: 24px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.siteSection .eventsSlider .currentEventInfo li {
+  padding: 35px 40px;
+  display: none;
+}
+.siteSection .eventsSlider .currentEventInfo li h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.siteSection .eventsSlider .currentEventInfo .active {
+  display: block;
+}
+
+.questionTooltip {
+  margin-left: 10px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+.questionTooltip img {
+  width: 100%;
+  height: 100%;
+}
+
+.placeholderImg {
+  border-radius: 10px;
+}
+
+.listNumber {
+  display: inline-block;
+  width: 54px;
+  height: 54px;
+  text-align: center;
+  padding-top: 18px;
+  border-radius: 10px;
+  border: 1px solid #7C7C7C;
+  margin-right: 20px;
 }
 
 .active {

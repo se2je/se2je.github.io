@@ -51,7 +51,7 @@
 
         <div>
             <h3>Блог</h3>
-            <ul class="asideNavList">
+            <ul class="asideLinksList">
                 <li><span class="navIcon"><img src="./src/icons/target.svg" alt="target_icon"></span>Обзоры событий</li>
                 <li><span class="navIcon"><img src="./src/icons/target.svg" alt="target_icon"></span>Статьи</li>
             </ul>
@@ -59,7 +59,7 @@
 
         <div>
             <h3>Проекты</h3>
-            <ul class="asideNavList">
+            <ul class="asideProjectsList">
                 <li><span class="navIcon"><img src="./src/icons/target.svg" alt="target_icon"></span>Клиника <span
                         class="soon"></span></li>
                 <li><span class="navIcon"><img src="./src/icons/target.svg" alt="target_icon"></span>mCity Food <span
@@ -254,7 +254,61 @@
     Тут будут участники
 </section>
 <section class="siteSection events">
-    Тут будут мероприятия
+    <div class="siteSectionHeading">
+        <div class="siteSectionHeadingLeft">
+            <h2>МЕРОПРИЯТИЯ</h2>
+            <p>Храм успеха и заботы о себе</p>
+        </div>
+        <div class="siteSectionHeadingRight">
+            <button class="joinBtn">Присоединиться</button>
+        </div>
+    </div>
+    <div class="siteSectionBody">
+        <div class="eventsSlider">
+            <div class="eventsSliderSlide">
+                <ul class="eventsSliderTabs">
+                    <li class="active" id="event_1">
+                        <div class="frontDrop"></div>
+                        <img src="./src/placeholderpng2.jpg" alt="">
+                        <p class="eventDate">09.02.24</p>
+                    </li>
+                    <li id="event_2">
+                        <div class="frontDrop"></div>
+                        <img src="./src/placeholderpng2.jpg" alt="">
+                        <p class="eventDate">29.02.24</p>
+                    </li>
+                    <li id="event_3">
+                        <div class="frontDrop"></div>
+                        <img src="./src/placeholderpng2.jpg" alt="">
+                        <p class="eventDate">11.02.24</p>
+                    </li>
+                    <li id="event_4">
+                        <div class="frontDrop"></div>
+                        <img src="./src/placeholderpng2.jpg" alt="">
+                        <p class="eventDate">19.02.24</p>
+                    </li>
+                </ul>
+                <ul class="currentEventInfo">
+                    <li class="event_1">
+                        <h3>Мероприятие 1</h3>
+                        <p>Надо бы здесь сделать акцент больше на бизнес сущностях. Нетворкинг и бизнес-сессии</p>
+                    </li>
+                    <li class="event_2">
+                        <h3>Мероприятие 2</h3>
+                        <p>Надо бы здесь сделать акцент больше на бизнес сущностях. Нетворкинг и бизнес-сессии</p>
+                    </li>
+                    <li class="event_3">
+                        <h3>Мероприятие 3</h3>
+                        <p>Надо бы здесь сделать акцент больше на бизнес сущностях. Нетворкинг и бизнес-сессии</p>
+                    </li>
+                    <li class="event_4">
+                        <h3>Мероприятие 4</h3>
+                        <p>Надо бы здесь сделать акцент больше на бизнес сущностях. Нетворкинг и бизнес-сессии</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </section>
 <section class="siteSection contacts">
     <div class="siteSectionHeading">
@@ -268,7 +322,7 @@
     </div>
     <div class="siteSectionBody">
         <div class="siteSectionBodySlider">
-            <img src="./src/slider_placeholder.jpg" alt="">
+            <img class="placeholderImg" src="./src/slider_placeholder.jpg" alt="">
         </div>
         <div class="siteSectionBodyContactTabs">
             <ul class="contactTabsList">
@@ -364,6 +418,62 @@
                 </li>
                 <li class="contactsTabItem medicine">
                     <h4>Доступные лекарства в клубе “Москва”</h4>
+                    <ul class="medicine_lists">
+                        <li>
+                            <h3>Для восстановления</h3>
+                            <ul class="medicine_list_1">
+                                <li>
+                                    <p> Глутатион</p>
+                                    <div class="questionTooltip tooltip"><img src="./src/icons/question_mark.svg"
+                                                                              alt=""> <span
+                                            class="tooltiptext">Ну типо вас массажируют))</span></div>
+                                </li>
+                                <li>
+                                    <p> Глутатион</p>
+
+                                    <span class="questionTooltip tooltip"><img src="./src/icons/question_mark.svg"
+                                                                               alt=""> <span
+                                            class="tooltiptext">Ну типо вас массажируют)) 123123123</span></span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Для долголетия</h3>
+                            <ul class="medicine_list_2">
+                                <li>
+                                    <p> Глутатион</p>
+                                    <div class="questionTooltip tooltip"><img src="./src/icons/question_mark.svg"
+                                                                              alt=""> <span
+                                            class="tooltiptext">Ну типо вас массажируют))</span></div>
+                                </li>
+                                <li>
+                                    <p> Глутатион</p>
+
+                                    <span class="questionTooltip tooltip"><img src="./src/icons/question_mark.svg"
+                                                                               alt=""> <span
+                                            class="tooltiptext">Ну типо вас массажируют)) 123123123</span></span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>Для продуктивности</h3>
+                            <ul class="medicine_list_3">
+                                <li>
+                                    <p> Глутатион</p>
+                                    <div class="questionTooltip tooltip"><img src="./src/icons/question_mark.svg"
+                                                                              alt=""> <span
+                                            class="tooltiptext">Ну типо вас массажируют))</span></div>
+                                </li>
+                                <li>
+                                    <p> Глутатион</p>
+
+                                    <span class="questionTooltip tooltip"><img src="./src/icons/question_mark.svg"
+                                                                               alt=""> <span
+                                            class="tooltiptext">Ну типо вас массажируют)) 123123123</span></span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </li>
                 <li class="contactsTabItem workers">
                     <h4>Доступные сотрудники в клубе "Москва"</h4>
@@ -408,8 +518,11 @@
             <div class="contactsInfo">
                 <ul>
                     <li><img src="./src/icons/grain.svg" alt=""><a href="tel:88003520052">8 800 352 00 52</a></li>
-                    <li><img src="./src/icons/grain.svg" alt=""> <a href="mailto:moscow@lazaret.heath">moscow@lazaret.heath</a></li>
-                    <li><img src="./src/icons/grain.svg" alt=""><a href="https://www.google.com/maps/dir//%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9+%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9+%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9+%D1%86%D0%B5%D0%BD%D1%82%D1%80+%C2%AB%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0-%D0%A1%D0%B8%D1%82%D0%B8%C2%BB+(%D0%9C%D0%9C%D0%94%D0%A6+%C2%AB%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0-%D0%A1%D0%B8%D1%82%D0%B8%C2%BB),+Presnenskaya+Naberezhnaya,+2,+Moscow,+123317/@55.737724,37.5288746,12.75z/data=!4m8!4m7!1m0!1m5!1m1!1s0x46b54bdc44383363:0x259300bbe1e597ac!2m2!1d37.5369452!2d55.7484779?entry=ttu" target="_blank">Сити, Башня “Москва”</a></li>
+                    <li><img src="./src/icons/grain.svg" alt=""> <a href="mailto:moscow@lazaret.heath">moscow@lazaret.heath</a>
+                    </li>
+                    <li><img src="./src/icons/grain.svg" alt=""><a
+                            href="https://www.google.com/maps/dir//%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9+%D0%BC%D0%B5%D0%B6%D0%B4%D1%83%D0%BD%D0%B0%D1%80%D0%BE%D0%B4%D0%BD%D1%8B%D0%B9+%D0%B4%D0%B5%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9+%D1%86%D0%B5%D0%BD%D1%82%D1%80+%C2%AB%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0-%D0%A1%D0%B8%D1%82%D0%B8%C2%BB+(%D0%9C%D0%9C%D0%94%D0%A6+%C2%AB%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0-%D0%A1%D0%B8%D1%82%D0%B8%C2%BB),+Presnenskaya+Naberezhnaya,+2,+Moscow,+123317/@55.737724,37.5288746,12.75z/data=!4m8!4m7!1m0!1m5!1m1!1s0x46b54bdc44383363:0x259300bbe1e597ac!2m2!1d37.5369452!2d55.7484779?entry=ttu"
+                            target="_blank">Сити, Башня “Москва”</a></li>
                 </ul>
             </div>
         </div>
