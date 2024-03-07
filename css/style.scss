@@ -23,6 +23,11 @@ $br-left: 10px 0 0 10px;
   justify-content: center;
 }
 
+#dark-block {
+  background: $c-def-dark-grey;
+  border-radius: $br-md;
+}
+
 body {
   color: $c-def-white;
   background: $c-def-grey;
@@ -252,8 +257,7 @@ p {
       max-width: 460px;
       width: 100%;
       padding: 40px 35px;
-      background-color: $c-def-dark-grey;
-      border-radius: $br-md;
+      @extend #dark-block;
       text-align: center;
 
       &Heading {
@@ -307,9 +311,8 @@ p {
       display: flex;
       justify-content: space-between;
       width: 100%;
-      background: $c-def-dark-grey;
+      @extend #dark-block;
       padding: 60px 30px;
-      border-radius: $br-md;
 
       .dnaImg {
         max-width: 400px;
@@ -369,6 +372,10 @@ p {
         display: flex;
         gap: 5px;
 
+        .active {
+          background: $c-def-dark-grey;
+        }
+
         li {
           @extend #flex-column;
           width: 25%;
@@ -376,11 +383,98 @@ p {
           justify-content: center;
           align-items: center;
           border-radius: 10px 10px 0 0;
-          padding: 10px;
+          padding: 15px 10px 20px;
           cursor: pointer;
+          user-select: none;
 
           &:hover {
             background: $c-def-dark-grey;
+          }
+        }
+      }
+
+      .contactsTabsItems {
+        .contactsTabItem {
+          @extend #dark-block;
+          display: none;
+          margin-top: -15px;
+          padding: 40px 50px;
+
+          h4 {
+            font-size: $fz-md-x;
+            font-weight: 600;
+            margin-bottom: 27px;
+
+          }
+
+          .contactsTabItemList {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-row-gap: 20px;
+
+            li {
+              display: flex;
+              align-items: center;
+              letter-spacing: .7px;
+
+              p {
+                width: fit-content;
+              }
+
+              .questionTooltip {
+                margin-left: 10px;
+                cursor: pointer;
+                width: 24px;
+                height: 24px;
+
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+
+                //transform: translateY(1px);
+              }
+            }
+
+            .listNumber {
+              display: inline-block;
+              width: 54px;
+              height: 54px;
+              text-align: center;
+              padding-top: 17px;
+              border-radius: $br-md;
+              border: 1px solid $c-def-light-grey;
+              margin-right: 20px;
+            }
+          }
+        }
+
+
+
+        .active {
+          display: block;
+        }
+      }
+      .contactsInfo {
+        @extend #dark-block;
+        margin-top: 15px;
+        padding: 25px 0;
+        ul {
+          display: flex;
+          justify-content: space-around;
+          li{
+            @extend #flex-column;
+            align-items: center;
+            gap: 5px;
+          }
+          a{
+            text-decoration: none;
+            font-weight: 600;
+            color: $c-def-white;
+          }
+          img{
+            width: 26px;
+            height: 28px;
           }
         }
       }
@@ -393,4 +487,26 @@ p {
 .active {
   display: block;
 
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: fit-content;
+  background-color: $c-def-light-grey;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }

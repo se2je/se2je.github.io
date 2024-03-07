@@ -1,5 +1,5 @@
 @charset "UTF-8";
-#flex-column, .siteSectionBodyContactTabs .contactTabsList li, .siteSectionBodyContentDropInfo, .asideNavList, .asideNav, .aside {
+#flex-column, .siteSectionBodyContactTabs .contactsInfo ul li, .siteSectionBodyContactTabs .contactTabsList li, .siteSectionBodyContentDropInfo, .asideNavList, .asideNav, .aside {
   display: flex;
   flex-direction: column;
 }
@@ -8,6 +8,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#dark-block, .siteSectionBodyContactTabs .contactsInfo, .siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem, .siteSectionBodyContent, .siteSectionBodyInfo {
+  background: #0F0F0F;
+  border-radius: 10px;
 }
 
 body {
@@ -206,8 +211,6 @@ p {
   max-width: 460px;
   width: 100%;
   padding: 40px 35px;
-  background-color: #0F0F0F;
-  border-radius: 10px;
   text-align: center;
 }
 .siteSectionBodyInfoHeading {
@@ -250,9 +253,7 @@ p {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background: #0F0F0F;
   padding: 60px 30px;
-  border-radius: 10px;
 }
 .siteSectionBodyContent .dnaImg {
   max-width: 400px;
@@ -300,21 +301,113 @@ p {
   display: flex;
   gap: 5px;
 }
+.siteSectionBodyContactTabs .contactTabsList .active {
+  background: #0F0F0F;
+}
 .siteSectionBodyContactTabs .contactTabsList li {
   width: 25%;
   gap: 10px;
   justify-content: center;
   align-items: center;
   border-radius: 10px 10px 0 0;
-  padding: 10px;
+  padding: 15px 10px 20px;
   cursor: pointer;
+  user-select: none;
 }
 .siteSectionBodyContactTabs .contactTabsList li:hover {
   background: #0F0F0F;
 }
+.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem {
+  display: none;
+  margin-top: -15px;
+  padding: 40px 50px;
+}
+.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem h4 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 27px;
+}
+.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .contactsTabItemList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 20px;
+}
+.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .contactsTabItemList li {
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.7px;
+}
+.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .contactsTabItemList li p {
+  width: fit-content;
+}
+.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .contactsTabItemList li .questionTooltip {
+  margin-left: 10px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .contactsTabItemList li .questionTooltip img {
+  width: 100%;
+  height: 100%;
+}
+.siteSectionBodyContactTabs .contactsTabsItems .contactsTabItem .contactsTabItemList .listNumber {
+  display: inline-block;
+  width: 54px;
+  height: 54px;
+  text-align: center;
+  padding-top: 17px;
+  border-radius: 10px;
+  border: 1px solid #7C7C7C;
+  margin-right: 20px;
+}
+.siteSectionBodyContactTabs .contactsTabsItems .active {
+  display: block;
+}
+.siteSectionBodyContactTabs .contactsInfo {
+  margin-top: 15px;
+  padding: 25px 0;
+}
+.siteSectionBodyContactTabs .contactsInfo ul {
+  display: flex;
+  justify-content: space-around;
+}
+.siteSectionBodyContactTabs .contactsInfo ul li {
+  align-items: center;
+  gap: 5px;
+}
+.siteSectionBodyContactTabs .contactsInfo ul a {
+  text-decoration: none;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+.siteSectionBodyContactTabs .contactsInfo ul img {
+  width: 26px;
+  height: 28px;
+}
 
 .active {
   display: block;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: fit-content;
+  background-color: #7C7C7C;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 
 /*# sourceMappingURL=style.css.map */

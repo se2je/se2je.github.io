@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         siteSections.forEach((section) => {
             section.classList.toggle('active', section.classList.contains(tab));
         });
-        
+
         navItems.forEach((item) => {
             item.classList.toggle('active', item.id === tab);
         });
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Expandable blocks logic
+
     const expandableBlocks = document.querySelectorAll('.expandable-block');
 
     expandableBlocks.forEach(function (block) {
@@ -64,7 +65,56 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Contact tabs logic
+
+    const contactTabs = document.querySelectorAll('.contactTabsList li');
+    const contactsTabItems = document.querySelectorAll('.contactsTabItem');
+    let currentContactTab = 'activities';
+
+    const setCurrentContactTab = (tab) => {
+        contactsTabItems.forEach((tabItem) => {
+            tabItem.classList.toggle('active', tabItem.classList.contains(tab));
+        });
+
+        contactTabs.forEach((item) => {
+            item.classList.toggle('active', item.id === tab);
+        });
+    }
+
+    contactTabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            currentContactTab = tab.id;
+            setCurrentContactTab(currentContactTab)
+        })
+    });
+
+    setCurrentContactTab(currentContactTab)
+
+
+    function addSequenceNumbers(parentElement) {
+
+        let listItems = parentElement.querySelectorAll('li');
+
+        // Loop through each list item
+        listItems.forEach(function (item, index) {
+            // Create a span element for the sequence number
+            let span = document.createElement('span');
+
+            span.textContent = (index + 1).toString();
+            span.classList.add('listNumber')
+            item.insertBefore(span, item.firstChild);
+        });
+    }
+
+    const activitiesList = document.querySelector('.activitiesList')
+    const leisureList = document.querySelector('.leisureList')
+
+    addSequenceNumbers(activitiesList)
+    addSequenceNumbers(leisureList)
 });
+
+// Body offset relative to aside
 
 function updateBodyPadding() {
     let asideWidth = document.querySelector('.aside').offsetWidth;
@@ -75,3 +125,5 @@ function updateBodyPadding() {
 
 updateBodyPadding();
 window.addEventListener('resize', updateBodyPadding);
+
+
